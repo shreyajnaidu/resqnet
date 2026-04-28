@@ -445,6 +445,16 @@ setInterval(() => {
   }
 }, 2000);
 
+const path = require("path");
+
+// Serve frontend build
+app.use(express.static(path.join(process.cwd(), "dist")));
+
+// For all other routes → send frontend
+app.get("*", (req, res) => {
+  res.sendFile(path.join(process.cwd(), "dist", "index.html"));
+});
+
 const PORT = process.env.PORT || 4000;
 server.listen(PORT, () => {
   console.log(`\n🚨 ResQnet backend running on http://localhost:${PORT}`);
