@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-ink-950: #06070a;
+  --bg-ink-900: #0a0c10;
+  --bg-ink-800: #0f1218;
+  --grain-opacity: 0.025;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+  margin: 0;
+  background: #06070a;
+  min-height: 100%;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  letter-spacing: -0.005em;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Distinctive headers */
+.font-display {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.03em;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: rgba(255,255,255,0.02); }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.2); }
+
+/* Atmospheric grid */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* Grain overlay */
+.grain {
+  position: relative;
+}
+.grain::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  opacity: var(--grain-opacity);
+  pointer-events: none;
+  mix-blend-mode: overlay;
+}
+
+/* Frosted glass card */
+.card {
+  background: linear-gradient(135deg, rgba(255,255,255,0.025), rgba(255,255,255,0.008));
+  border: 1px solid rgba(255,255,255,0.06);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.card-hover {
+  transition: border-color 0.2s, transform 0.2s, background 0.2s;
+}
+.card-hover:hover {
+  border-color: rgba(255,255,255,0.14);
+}
+
+/* Tactical button */
+.tac-btn {
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: all 0.15s;
+}
+.tac-btn:hover {
+  background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+  border-color: rgba(255,255,255,0.16);
+}
+.tac-btn:active {
+  transform: translateY(1px);
+}
+
+/* Chrome/sweep effect for high-impact panels */
+.sweep {
+  background: linear-gradient(110deg, transparent 35%, rgba(255,255,255,0.06) 50%, transparent 65%);
+  background-size: 200% 100%;
+  animation: shimmer 3s linear infinite;
+}
+
+/* SOS pulse */
+@keyframes sos-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.6), 0 0 30px 0 rgba(239, 68, 68, 0.2); }
+  50% { box-shadow: 0 0 0 16px rgba(239, 68, 68, 0), 0 0 60px 0 rgba(239, 68, 68, 0.5); }
+}
+.sos-pulse { animation: sos-pulse 1.6s ease-out infinite; }
+
+/* Slide-in helpers */
+@keyframes slide-down { from { transform: translateY(-12px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+.anim-slide-down { animation: slide-down 0.4s cubic-bezier(0.2, 0.9, 0.3, 1) both; }
+
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+.anim-fade-in { animation: fade-in 0.4s ease-out both; }
+
+/* Severity overlay */
+.severity-fire { box-shadow: inset 0 0 80px rgba(239, 68, 68, 0.25); }
+.severity-medical { box-shadow: inset 0 0 80px rgba(6, 182, 212, 0.18); }
+.severity-security { box-shadow: inset 0 0 80px rgba(245, 158, 11, 0.18); }
+.severity-hazard { box-shadow: inset 0 0 80px rgba(234, 179, 8, 0.22); }
+
+/* Map dash flow */
+@keyframes dashflow {
+  to { stroke-dashoffset: -28; }
+}
+.dash-flow { animation: dashflow 1.2s linear infinite; }
+
+/* Radar sweep */
+@keyframes radar { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+.radar-sweep { animation: radar 4s linear infinite; transform-origin: center; }
+
+/* Focus ring */
+.focus-ring:focus { outline: 2px solid rgba(239, 68, 68, 0.5); outline-offset: 2px; }
+
+/* Number tick */
+.tabular { font-variant-numeric: tabular-nums; }
+
+/* Vignette */
+.vignette::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse at center, transparent 50%, rgba(0,0,0,0.5) 100%);
+}

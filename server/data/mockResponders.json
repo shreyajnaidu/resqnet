@@ -1,0 +1,8 @@
+[
+  { "id": "R-01", "name": "Officer Mehta",   "role": "Fire",     "zone": "corridor_a", "status": "IDLE",       "movement": "stationary", "lastUpdate": null },
+  { "id": "R-02", "name": "Medic Sharma",    "role": "Medical",  "zone": "lobby",      "status": "IDLE",       "movement": "stationary", "lastUpdate": null },
+  { "id": "R-03", "name": "Security Patel",  "role": "Security", "zone": "reception",  "status": "IDLE",       "movement": "stationary", "lastUpdate": null },
+  { "id": "R-04", "name": "Hazmat Singh",    "role": "Hazard",   "zone": "kitchen",    "status": "IDLE",       "movement": "stationary", "lastUpdate": null },
+  { "id": "R-05", "name": "Officer Khan",    "role": "Fire",     "zone": "corridor_b", "status": "IDLE",       "movement": "stationary", "lastUpdate": null },
+  { "id": "R-06", "name": "Medic Reddy",     "role": "Medical",  "zone": "pool",       "status": "IDLE",       "movement": "stationary", "lastUpdate": null }
+]

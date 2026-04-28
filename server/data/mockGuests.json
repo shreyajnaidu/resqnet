@@ -1,0 +1,20 @@
+[
+  {
+    "id": "fam-01",
+    "name": "Aryan Family",
+    "members": [
+      { "id": "g-01", "name": "Aryan",  "age": 8,  "zone": "pool",       "evacuated": false, "accessibility": null,            "hasBand": true,  "deviceType": "band" },
+      { "id": "g-02", "name": "Priya",  "age": 35, "zone": "restaurant", "evacuated": false, "accessibility": null,            "hasBand": false, "deviceType": "phone" },
+      { "id": "g-03", "name": "Kavita", "age": 62, "zone": "lobby",      "evacuated": false, "accessibility": "wheelchair",    "hasBand": true,  "deviceType": "band" },
+      { "id": "g-04", "name": "Raj",    "age": 40, "zone": "room_1",     "evacuated": false, "accessibility": null,            "hasBand": false, "deviceType": "phone" }
+    ]
+  },
+  {
+    "id": "fam-02",
+    "name": "Kumar Family",
+    "members": [
+      { "id": "g-05", "name": "Rohan",  "age": 28, "zone": "lobby",      "evacuated": false, "accessibility": null,            "hasBand": false, "deviceType": "phone" },
+      { "id": "g-06", "name": "Anjali", "age": 26, "zone": "reception",  "evacuated": false, "accessibility": "hearing_impaired", "hasBand": false, "deviceType": "phone" }
+    ]
+  }
+]

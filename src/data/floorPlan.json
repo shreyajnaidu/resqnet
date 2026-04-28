@@ -1,0 +1,20 @@
+{
+  "zones": [
+    { "id": "lobby",      "name": "Main Lobby",     "capacity": 80, "x": 300, "y": 280, "w": 180, "h": 100, "adjacentTo": ["corridor_a", "reception", "restaurant"] },
+    { "id": "reception",  "name": "Reception",      "capacity": 30, "x": 300, "y": 200, "w": 120, "h": 70,  "adjacentTo": ["lobby", "corridor_a"] },
+    { "id": "restaurant", "name": "Restaurant",     "capacity": 60, "x": 80,  "y": 280, "w": 200, "h": 100, "adjacentTo": ["lobby", "kitchen"] },
+    { "id": "kitchen",    "name": "Kitchen",        "capacity": 15, "x": 80,  "y": 180, "w": 120, "h": 90,  "adjacentTo": ["restaurant"] },
+    { "id": "pool",       "name": "Pool Area",      "capacity": 40, "x": 500, "y": 400, "w": 200, "h": 120, "adjacentTo": ["corridor_b", "lobby"] },
+    { "id": "corridor_a", "name": "Corridor A",     "capacity": 50, "x": 300, "y": 400, "w": 180, "h": 50,  "adjacentTo": ["lobby", "reception", "room_1", "room_2", "corridor_b"] },
+    { "id": "corridor_b", "name": "Corridor B",     "capacity": 50, "x": 500, "y": 280, "w": 50,  "h": 180, "adjacentTo": ["corridor_a", "pool", "room_3", "room_4"] },
+    { "id": "room_1",     "name": "Room 101",       "capacity": 6,  "x": 300, "y": 470, "w": 80,  "h": 60,  "adjacentTo": ["corridor_a"] },
+    { "id": "room_2",     "name": "Room 102",       "capacity": 6,  "x": 400, "y": 470, "w": 80,  "h": 60,  "adjacentTo": ["corridor_a"] },
+    { "id": "room_3",     "name": "Room 103",       "capacity": 6,  "x": 600, "y": 200, "w": 80,  "h": 60,  "adjacentTo": ["corridor_b"] },
+    { "id": "room_4",     "name": "Room 104",       "capacity": 6,  "x": 600, "y": 280, "w": 80,  "h": 60,  "adjacentTo": ["corridor_b"] }
+  ],
+  "exits": [
+    { "id": "exit_a", "name": "Exit A (Main)",  "x": 240, "y": 330, "zone": "lobby",      "flowRate": 0 },
+    { "id": "exit_b", "name": "Exit B (Side)",  "x": 720, "y": 460, "zone": "pool",       "flowRate": 0 },
+    { "id": "exit_c", "name": "Exit C (Rear)",  "x": 140, "y": 140, "zone": "kitchen",    "flowRate": 0 }
+  ]
+}
